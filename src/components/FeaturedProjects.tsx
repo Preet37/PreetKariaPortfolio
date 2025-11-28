@@ -1,17 +1,53 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export function FeaturedProjects() {
   const projects = [
     {
-      title: "Limit Order Book Simulator",
+      title: "Sentinel — AI Agent Safety OS",
+      description:
+        "Middleware protection layer for autonomous agents. Intercepts risky actions (payments, deletions) using Sentry stats and requires Telnyx voice authorization before execution.",
+      tags: ["OpenAI", "Sentry", "Telnyx", "Python", "Security"],
+      gradient: "from-blue-600/20 to-cyan-600/20",
+      visual: (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-black/20 relative overflow-hidden">
+           {/* Shield Pulse */}
+           <motion.div 
+             className="absolute w-24 h-24 bg-blue-500/20 rounded-full blur-xl"
+             animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
+             transition={{ duration: 3, repeat: Infinity }}
+           />
+           {/* Shield Icon */}
+           <div className="relative z-10 p-4 bg-black/40 border border-blue-500/50 rounded-xl backdrop-blur-md">
+             <ShieldCheck className="w-12 h-12 text-blue-400" />
+           </div>
+           
+           {/* Incoming Data Packets */}
+           <div className="absolute w-full h-full">
+             {[...Array(3)].map((_, i) => (
+               <motion.div
+                 key={i}
+                 className="absolute left-0 h-1 bg-red-500 rounded-full"
+                 style={{ top: `${30 + i * 20}%`, width: '40px' }}
+                 animate={{ x: ['-100%', '150%'], opacity: [0, 1, 0] }}
+                 transition={{ duration: 2, delay: i * 0.5, repeat: Infinity, ease: "linear" }}
+               />
+             ))}
+           </div>
+           <div className="absolute bottom-6 font-mono text-[10px] text-blue-400 tracking-widest">
+             THREAT_INTERCEPTED
+           </div>
+        </div>
+      ),
+    },
+    {
+      title: "OrderFlow Core", // Renamed
       description:
         "High-performance order book simulator with microsecond-level accuracy. Implements market-making strategies with inventory management.",
       tags: ["Python", "C++", "Quant", "Sim"],
       gradient: "from-green-600/20 to-emerald-600/20",
       visual: (
         <div className="w-full h-full flex flex-col justify-center px-8 gap-2">
-          {/* Animated Order Book Bars */}
           <div className="flex justify-between items-end h-32 gap-1">
              {[...Array(8)].map((_, i) => (
                <motion.div 
@@ -34,43 +70,21 @@ export function FeaturedProjects() {
       description:
         "Custom hardware accelerator for neural network inference. Implements systolic array architecture for matrix multiplication.",
       tags: ["Verilog", "RTL", "FPGA", "Hardware"],
-      gradient: "from-blue-600/20 to-indigo-600/20",
+      gradient: "from-purple-600/20 to-indigo-600/20",
       visual: (
         <div className="w-full h-full flex items-center justify-center">
           <div className="grid grid-cols-3 gap-3">
             {[...Array(9)].map((_, i) => (
               <motion.div 
                 key={i}
-                className="w-8 h-8 border border-blue-400/30 bg-blue-400/10 rounded flex items-center justify-center"
-                animate={{ backgroundColor: ["rgba(96, 165, 250, 0.1)", "rgba(96, 165, 250, 0.4)", "rgba(96, 165, 250, 0.1)"] }}
+                className="w-8 h-8 border border-purple-400/30 bg-purple-400/10 rounded flex items-center justify-center"
+                animate={{ backgroundColor: ["rgba(168, 85, 247, 0.1)", "rgba(168, 85, 247, 0.4)", "rgba(168, 85, 247, 0.1)"] }}
                 transition={{ duration: 2, repeat: Infinity, delay: (i % 3) * 0.2 + Math.floor(i/3)*0.2 }}
               >
-                <div className="w-1 h-1 bg-blue-400 rounded-full" />
+                <div className="w-1 h-1 bg-purple-400 rounded-full" />
               </motion.div>
             ))}
           </div>
-        </div>
-      ),
-    },
-    {
-      title: "Onboarly — CalHacks Winner",
-      description:
-        "AI-powered employee onboarding engine. Uses Gemini Vision in a Chrome extension to coach users step-by-step.",
-      tags: ["Next.js", "LLMs", "Chrome Ext", "Winner"],
-      gradient: "from-purple-600/20 to-pink-600/20",
-      visual: (
-        <div className="w-full h-full flex flex-col justify-center px-8 gap-3">
-           <div className="h-2 w-3/4 bg-white/10 rounded overflow-hidden">
-             <motion.div 
-               className="h-full bg-purple-500"
-               animate={{ width: ["0%", "100%"] }}
-               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
-             />
-           </div>
-           <div className="space-y-2">
-             <motion.div className="h-8 w-full bg-white/5 rounded border-l-2 border-purple-500" animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity }} />
-             <div className="h-8 w-5/6 bg-white/5 rounded border-l-2 border-transparent" />
-           </div>
         </div>
       ),
     },
@@ -82,7 +96,6 @@ export function FeaturedProjects() {
       gradient: "from-orange-600/20 to-red-600/20",
       visual: (
         <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
-           {/* Robot Path */}
            <svg className="absolute inset-0 w-full h-full opacity-30">
              <motion.path 
                d="M 20 100 Q 100 20 180 100" 
@@ -130,7 +143,6 @@ export function FeaturedProjects() {
                 index % 2 === 1 ? "md:grid-flow-dense" : ""
               }`}
             >
-              {/* Text Content */}
               <div className={index % 2 === 1 ? "md:col-start-2" : ""}>
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                   {project.title}
@@ -149,7 +161,6 @@ export function FeaturedProjects() {
                 </div>
               </div>
 
-              {/* Active Visual Card */}
               <div className={index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}>
                 <motion.div 
                   whileHover={{ scale: 1.02 }}

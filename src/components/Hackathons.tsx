@@ -4,6 +4,12 @@ import { Trophy, Award } from "lucide-react";
 export function Hackathons() {
   const wins = [
     {
+      event: "AGI Hackathon",
+      project: "Sentinel",
+      description: "AI Agent Safety OS with Sentry & Telnyx",
+      year: "2025",
+    },
+    {
       event: "CalHacks",
       project: "Onboarly",
       description: "AI-powered employee onboarding platform",
@@ -12,8 +18,7 @@ export function Hackathons() {
     {
       event: "ACM Hackathon",
       project: "Learnify",
-      description:
-        "Smart study companion with spaced repetition",
+      description: "Smart study companion with spaced repetition",
       year: "2025",
     },
   ];
@@ -27,7 +32,6 @@ export function Hackathons() {
 
   return (
     <section id="hackathons" className="py-20 px-6 relative">
-      {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/3 w-[700px] h-[700px] bg-gradient-radial from-cyan-600/10 to-transparent rounded-full blur-3xl" />
       </div>
@@ -36,7 +40,7 @@ export function Hackathons() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }} // Unlocked
+          viewport={{ once: false, amount: 0.2 }}
           className="text-center mb-16"
         >
           <h2 className="text-white mb-4">Hackathons & Wins</h2>
@@ -46,17 +50,16 @@ export function Hackathons() {
         </motion.div>
 
         {/* Winner Badges */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           {wins.map((win, index) => (
             <motion.div
               key={win.event}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false, margin: "-50px" }} // Unlocked
+              viewport={{ once: false, margin: "-50px" }}
               transition={{ delay: index * 0.1 }}
               className="relative bg-gradient-to-br from-yellow-600/20 to-amber-600/20 backdrop-blur-xl border-2 border-yellow-500/50 rounded-2xl p-8"
             >
-              {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/10 to-amber-600/10 rounded-2xl blur-xl" />
 
               <div className="relative z-10">
@@ -75,7 +78,7 @@ export function Hackathons() {
                 <div className="text-yellow-300 mb-2">
                   {win.project}
                 </div>
-                <p className="text-white/60">
+                <p className="text-white/60 text-sm leading-relaxed">
                   {win.description}
                 </p>
               </div>
@@ -87,7 +90,7 @@ export function Hackathons() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }} // Unlocked
+          viewport={{ once: false }}
           className="text-center"
         >
           <div className="inline-flex items-center gap-2 text-white/60 mb-4">

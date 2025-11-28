@@ -22,14 +22,14 @@ export function Contact() {
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a
-              href="mailto:preet@example.com"
+              href="mailto:preetkaria37@gmail.com"
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg text-white flex items-center gap-2 hover:shadow-lg hover:shadow-purple-500/50 transition-shadow"
             >
               <Mail className="w-5 h-5" />
               Email Me
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/preetkaria/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white/5 border border-white/10 rounded-lg text-white flex items-center gap-2 hover:bg-white/10 transition-colors"
@@ -38,7 +38,7 @@ export function Contact() {
               LinkedIn
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Preet37"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white/5 border border-white/10 rounded-lg text-white flex items-center gap-2 hover:bg-white/10 transition-colors"
@@ -47,7 +47,7 @@ export function Contact() {
               GitHub
             </a>
             <a
-              href="https://devpost.com"
+              href="https://devpost.com/preetkaria37?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white/5 border border-white/10 rounded-lg text-white flex items-center gap-2 hover:bg-white/10 transition-colors"

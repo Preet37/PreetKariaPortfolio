@@ -43,7 +43,7 @@ export function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-4">
             <a
-              href="/Preet_Karia_Resume.pdf"
+              href="/Preet_Karia_Software_Resume.pdf"
               target="_blank"               // <--- THIS opens it in a new tab
               rel="noopener noreferrer"     // <--- THIS makes it secure
               className="hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-colors text-sm text-white"
@@ -70,7 +70,7 @@ export function Navbar() {
               Systems Online: Robotics · AI · Quant
             </span>
             <span>·</span>
-            <span>Hackathon Wins: 2</span>
+            <span>Hackathon Wins: 3</span>
             <span>·</span>
             <span>Location: Santa Cruz, CA</span>
           </div>
